@@ -72,15 +72,15 @@ factor = 1
 
 # Taking Input for the number of
 # Iterations our Algorithm will run
-number = int(input("Enter the number of iterations (must be > 1): "))
+iteration = int(input("Enter the number of iterations (must be > 1): "))
 
 # Plotting the Fibonacci Spiral Fractal
 # and printing the corresponding Fibonacci Number
-if number > 0:
-    print("Fibonacci series for", number, "elements :")
+if iteration > 0:
+    print("Fibonacci series for", iteration, "elements :")
     x = turtle.Turtle()
     x.speed(100)
-    fibonacci(number)
+    fibonacci(iteration)
     turtle.done()
 else:
     print("Number of iterations must be > 0")
