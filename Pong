@@ -1,16 +1,16 @@
 import turtle
 
 
-# Main Screen
+# Tela Principal
 screen = turtle.Screen()
-screen.title("Pong kkk")
+screen.title("Pong")
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
 screen.tracer(0)
 
-# Elements
+# Elementos
 #
-# Draw paddle 1
+# Desenhar a primeira barra
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)
 paddle_a.shape("square")
@@ -19,7 +19,7 @@ paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
 paddle_a.goto(-350, 0)
 
-# Draw paddle 2
+# Desenhar a segunda barra
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
@@ -28,7 +28,7 @@ paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
 
-# Draw ball
+# Desenhar a bola
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("square")
@@ -38,7 +38,7 @@ ball.goto(0, 0)
 ball.dx = 0.2
 ball.dy = 0.2
 
-# Hud
+# Tela de informações
 hud = turtle.Turtle()
 hud.speed(0)
 hud.shape("square")
@@ -48,9 +48,9 @@ hud.hideturtle()
 hud.goto(0, 250)
 hud.write("0 ; 0", align="center", font=("Small Fonts", 24, "normal"))
 
-# Movement
+# Movimento
 #
-# Paddle 1 Movement upwards
+# Movimento da primeira barra para cima
 
 
 def paddle_a_up():
@@ -61,7 +61,7 @@ def paddle_a_up():
         y = 250
     paddle_a.sety(y)
 
-# Paddle 1 Movement downwards
+# Movimento da primeira barra para baixo
 
 
 def paddle_a_down():
@@ -73,7 +73,7 @@ def paddle_a_down():
     paddle_a.sety(y)
 
 
-# Paddle 2 Movement upwards
+# Movimento da segunda barra para cima
 
 
 def paddle_b_up():
@@ -84,7 +84,7 @@ def paddle_b_up():
         y = 250
     paddle_b.sety(y)
 
-# Paddle 2 Movement downwards
+# Movimento da segunda barra para baixo
 
 
 def paddle_b_down():
@@ -94,7 +94,7 @@ def paddle_b_down():
     else:
         y = -250
     paddle_b.sety(y)
-# Keyboard
+# Teclado
 
 
 screen.listen()
@@ -108,23 +108,23 @@ score_b = 0
 while True:
     screen.update()
 
-    # ball movement
+    # Movimento da bola
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-    # collision with the upper wall
+    # Colisão com a parede de cima
 
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
 
-    # collision with the lower wall
+    # Colisão com a parede de baixo
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
 
-    # collision with paddle 1
+    # Colisão com a primeira barra
 
     if ball.xcor() < - 330 and paddle_a.ycor()+50 > ball.ycor() > \
             paddle_a.ycor(
@@ -132,13 +132,13 @@ while True:
 
         ball.dx *= -1
 
-    # collision with paddle 2
+    # Colisão com a segunda barra
 
     if ball.xcor() > 330 and paddle_b.ycor()+50 > ball.ycor() > paddle_b.ycor(
             )-50:
         ball.dx *= -1
 
-    # collision with left wall
+    # Colisão com a parede da esquerda
 
     if ball.xcor() < -390:
         score_b += 1
@@ -152,7 +152,7 @@ while True:
         ball.dx += 0.05
 
 
-    # collision with right wall
+    # Colisão com a parede da direita
 
     if ball.xcor() > 390:
         score_a += 1
