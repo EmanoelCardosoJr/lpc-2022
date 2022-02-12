@@ -9,7 +9,6 @@ screen.setup(width=800, height=600)
 screen.tracer(0)
 
 # Elements
-#
 # Draw paddle 1
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)
