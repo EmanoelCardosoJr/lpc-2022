@@ -12,7 +12,6 @@ screen.tracer(0)  # no alterations in speed or functioning of turtle
 # Elements
 
 # Add paddles and ball before adding movement, control and mechanics
-# Add Hud
 # Both the paddles and the ball are stationary turtle drawings with a set of
 # characteristics, speed(0) = stops all movement from turtle, penup() =
 # makes it so turtle doesn't draw lines when the object moves
