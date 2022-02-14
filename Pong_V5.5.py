@@ -15,7 +15,7 @@ screen.tracer(0)  # no alterations in speed or functioning of turtle
 # Add Hud
 # Both the paddles and the ball are stationary turtle drawings with a set of
 # characteristics, speed(0) = stops all movement from turtle, penup() =
-# makes so turtle doesn't draw lines when the object moves
+# makes it so turtle doesn't draw lines when the object moves
 
 # Draw paddle 1
 
@@ -56,7 +56,7 @@ ball.dy = vel_y
 
 # Hud
 
-# Use the turtle to get to a position, hide the turtle and write the base
+# Uses the turtle to get to a position, hides the turtle then writes.
 # score
 
 hud = turtle.Turtle()
@@ -143,18 +143,18 @@ def paddle_b_down():
 
 
 def song1():
-    """ This functions opem the .wav within the same directory as the .py
-    file and make it so only the sound plays, and the winsound.SND_ASYNC allows
+    """ This function opens the .wav within the same directory as the .py
+    file and makes it so only the sound plays, and the winsound.SND_ASYNC allows
     for the code to continue without the sound having to end first
     """
     winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
 
 def song2():
-    """ This functions opem the .wav within the same directory as the .py
-    file and make it so only the sound plays, and the winsound.SND_ASYNC allows
+    """ This function opens the .wav within the same directory as the .py
+    file and makes it so only the sound plays, and the winsound.SND_ASYNC allows
     for the code to continue without the sound having to end first
-        """
+    """
     winsound.PlaySound(
         "258020__kodack__arcade-bleep-sound.wav", winsound.SND_ASYNC
     )
@@ -202,7 +202,7 @@ while True:
     if is_paused:
         # make it so pressing p will stop everything and show
         # "Paused" in the hud, and pressing again will resume the normal
-        # functioning of the code, without a change in score.
+        # functioning of the code, without a change in score or position.
         hud.clear()
         hud.write("Paused", align="center", font=("Courier", 24, "normal"))
         screen.addshape("icegif-5447.gif")
@@ -272,7 +272,7 @@ while True:
             song2()
             ball.goto(0, 0)
             ball.dx = vel_x
-            ball.dx *= -1  # Make it so the ball goes to the left if it came
+            ball.dx *= -1  # Makes it so the ball goes to the left if it came
             # from the right
 
         # collision with paddle 1
